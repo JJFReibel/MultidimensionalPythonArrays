@@ -30,22 +30,23 @@
 class Array_2D:
   def __init__(self, x, y):
     rows, cols = (x, y)
-    self.arr = [[0 for i in range(cols)] for j in range(rows)] 
+    self.arr = [[None]*x for _ in range(y)]
   def set(self, x, y, value):
     self.arr[x][y] = value
   def get(self, x, y):
     return self.arr[x][y]
+  def output(self):
+    for i in range(len(self.arr)):
+      for j in range(len(self.arr[0])):
+        print(self.arr[i][j])
+      print()
   def expand(self, x, y):
-    rows, cols = (x, y)
-    length = len(self.arr)
-    arr2 = [0 for i in range(cols)]
-    arr3 = [0 for i in range(cols-len(self.arr)-1)]
-    for x in range(len(self.arr), rows):
-      self.arr.append(arr2)
-    for x in range(length):
-      self.arr[x].extend(arr3)
-    for x in range(len(self.arr)):
-      print(self.arr[x])
+    arr2 = [[None]*x for _ in range(y)]
+    for i in range(len(self.arr)):
+      for j in range(len(self.arr[0])):
+        arr2[i][j] = self.arr[i][j]
+    self.arr.clear()
+    self.arr = arr2
     
 #3-D Array Class
 class Array_3D:
