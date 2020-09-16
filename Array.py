@@ -23,7 +23,7 @@ myArr2D = Array_2D(3,4)
 myArr2D.set(2,2,"Hello Mars!")
 print(myArr2D.get(2,2))
 
-#Example Use of 3D Array_2D
+#Example Use of 3D Array
 myArr3D = Array_3D(3,4,5)
 myArr3D.set(2,2,2,"Hello Jupiter!")
 print(myArr3D.get(2,2,2))
