@@ -69,14 +69,17 @@ class Array_4D:
     return self.arr[x][y][z][t]
   
 #Example Use of 2D Array
-myArr2D = Array_2D(3,4)
-myArr2D.set(2,2,"Hello Mars!")
-print(myArr2D.get(2,2))
+myArr2D = Array_2D(5,2)
+myArr2D.set(1,1,"Hello Mars!")
+print(myArr2D.get(1,1))
+print(myArr2D.arr)
 print("Length column before expansion: " + str(len(myArr2D.arr)))
 print("Length row before expansion: " + str(len(myArr2D.arr[0])))
-myArr2D.expand(5,6)
+myArr2D.output()
+myArr2D.expand(7,3)
 print("Length column after expansion: " + str(len(myArr2D.arr)))
-print("Length row after expansion: " + str(len(myArr2D.arr[2])))
+print("Length row after expansion: " + str(len(myArr2D.arr[0])))
+myArr2D.output()
 
 #Example Use of 3D Array
 myArr3D = Array_3D(3,4,5)
