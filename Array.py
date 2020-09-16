@@ -52,11 +52,25 @@ class Array_2D:
 class Array_3D:
   def __init__(self, x, y, z):
     rows, cols, thirds = (x, y, z)
-    self.arr = [[[0 for i in range(cols)] for j in range(rows)] for k in range(thirds)]
+    self.arr = [[[None]*x for _ in range(y)] for _ in range(z)]
   def set(self, x, y, z, value):
     self.arr[x][y][z] = value
   def get(self, x, y, z):
     return self.arr[x][y][z]
+  def output(self):
+    for i in range(len(self.arr)):
+      for j in range(len(self.arr[0])):
+        for k in range(len(self.arr[0][0])):
+          print(self.arr[i][j][k])
+        print()
+  def expand(self, x, y, z):
+    arr2 = [[[None]*x for _ in range(y)] for _ in range(z)]
+    for i in range(len(self.arr)):
+      for j in range(len(self.arr[0])):
+        for k in range(len(self.arr[0][0])):
+          arr2[i][j][k] = self.arr[i][j][k]
+    self.arr.clear()
+    self.arr = arr2
 
 #4-D Array Class
 class Array_4D:
@@ -82,10 +96,19 @@ print("Length row after expansion: " + str(len(myArr2D.arr[0])))
 myArr2D.output()
 
 #Example Use of 3D Array
-myArr3D = Array_3D(3,4,5)
-myArr3D.set(2,2,2,"Hello Jupiter!")
-print(myArr3D.get(2,2,2))
-
+myArr3D = Array_3D(5,2,3)
+myArr3D.set(0,0,1,"Hello Mars!")
+myArr3D.set(0,0,2,"Hello Mars!")
+myArr3D.set(0,0,3,"Hello Mars!")
+print("Length column before expansion: " + str(len(myArr3D.arr)))
+print("Length row before expansion: " + str(len(myArr3D.arr[0])))
+print("Length third before expansion: " + str(len(myArr3D.arr[0][0])))
+print()
+myArr3D.expand(7,3,4)
+print("Length column after expansion: " + str(len(myArr3D.arr)))
+print("Length row after expansion: " + str(len(myArr3D.arr[0])))
+print("Length third after expansion: " + str(len(myArr3D.arr[0][0])))
+myArr3D.output()
 
 #Example Use of 4D Array
 myArr4D = Array_4D(3,4,5,6)
