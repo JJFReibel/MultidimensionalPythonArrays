@@ -78,6 +78,14 @@ class Array_3D:
           arr2[i][j][k] = self.arr[i][j][k]
     self.arr.clear()
     self.arr = arr2
+  def reduce(self, x, y, z):
+    arr2 = [[[None]*x for _ in range(y)] for _ in range(z)]
+    for i in range(len(arr2)):
+      for j in range(len(arr2[0])):
+        for k in range(len(arr2[0][0])):
+          arr2[i][j][k] = self.arr[i][j][k]
+    self.arr.clear()
+    self.arr = arr2
 
 #4-D Array Class
 class Array_4D:
@@ -110,16 +118,16 @@ myArr2D = Array_2D(5,2)
 myArr2D.set(1,1,"Hello Mars!")
 print(myArr2D.get(1,1))
 print(myArr2D.arr)
-print("Length row before expansion: " + str(len(myArr2D.arr)))
-print("Length column before expansion: " + str(len(myArr2D.arr[0])))
+print("Length 2D row before expansion: " + str(len(myArr2D.arr)))
+print("Length 2D column before expansion: " + str(len(myArr2D.arr[0])))
 myArr2D.output()
 myArr2D.expand(7,3)
-print("Length row after expansion: " + str(len(myArr2D.arr)))
-print("Length column after expansion: " + str(len(myArr2D.arr[0])))
+print("Length 2D row after expansion: " + str(len(myArr2D.arr)))
+print("Length 2D column after expansion: " + str(len(myArr2D.arr[0])))
 myArr2D.output()
 myArr2D.reduce(1,2)
-print("Length row after reduction: " + str(len(myArr2D.arr)))
-print("Length column after reduction: " + str(len(myArr2D.arr[0])))
+print("Length 2D row after reduction: " + str(len(myArr2D.arr)))
+print("Length 2D column after reduction: " + str(len(myArr2D.arr[0])))
 myArr2D.output()
 
 
@@ -128,17 +136,23 @@ myArr3D = Array_3D(5,2,3)
 myArr3D.set(0,0,1,"Hello Mars!")
 myArr3D.set(0,0,2,"Hello Mars!")
 myArr3D.set(0,0,3,"Hello Mars!")
-print("Length third before expansion: " + str(len(myArr3D.arr)))
-print("Length row before expansion: " + str(len(myArr3D.arr[0])))
-print("Length column before expansion: " + str(len(myArr3D.arr[0][0])))
+print("Length 3D third before expansion: " + str(len(myArr3D.arr)))
+print("Length 3D row before expansion: " + str(len(myArr3D.arr[0])))
+print("Length 3D column before expansion: " + str(len(myArr3D.arr[0][0])))
 print()
+myArr3D.output()
 myArr3D.expand(7,3,4)
-print("Length third after expansion: " + str(len(myArr3D.arr)))
-print("Length row after expansion: " + str(len(myArr3D.arr[0])))
-print("Length column after expansion: " + str(len(myArr3D.arr[0][0])))
+print("Length 3D third after expansion: " + str(len(myArr3D.arr)))
+print("Length 3D row after expansion: " + str(len(myArr3D.arr[0])))
+print("Length 3D column after expansion: " + str(len(myArr3D.arr[0][0])))
+myArr3D.output()
+myArr3D.reduce(1,2,3)
+print("Length 3D third after reduction: " + str(len(myArr3D.arr)))
+print("Length 3D row after reduction: " + str(len(myArr3D.arr[0])))
+print("Length 3D column after expansion: " + str(len(myArr3D.arr[0][0])))
 myArr3D.output()
 
-#Example Use of 3D Array
+#Example Use of 4D Array
 myArr4D = Array_4D(5,2,3,4)
 myArr4D.set(0,0,0,1,"Hello Mars!")
 myArr4D.set(0,0,0,2,"Hello Mars!")
