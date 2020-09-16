@@ -47,6 +47,13 @@ class Array_2D:
         arr2[i][j] = self.arr[i][j]
     self.arr.clear()
     self.arr = arr2
+  def reduce(self, x, y):
+    arr2 = [[None]*x for _ in range(y)]
+    for i in range(len(arr2)):
+      for j in range(len(arr2[0])):
+        arr2[i][j] = self.arr[i][j]
+    self.arr.clear()
+    self.arr = arr2
     
 #3-D Array Class
 class Array_3D:
@@ -110,6 +117,11 @@ myArr2D.expand(7,3)
 print("Length row after expansion: " + str(len(myArr2D.arr)))
 print("Length column after expansion: " + str(len(myArr2D.arr[0])))
 myArr2D.output()
+myArr2D.reduce(1,2)
+print("Length row after reduction: " + str(len(myArr2D.arr)))
+print("Length column after reduction: " + str(len(myArr2D.arr[0])))
+myArr2D.output()
+
 
 #Example Use of 3D Array
 myArr3D = Array_3D(5,2,3)
