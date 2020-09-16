@@ -34,6 +34,17 @@ class Array_2D:
     self.arr[x][y] = value
   def get(self, x, y):
     return self.arr[x][y]
+  def expand(self, x, y):
+    rows, cols = (x, y)
+    length = len(self.arr)
+    arr2 = [0 for i in range(cols)]
+    arr3 = [0 for i in range(cols-len(self.arr)-1)]
+    for x in range(len(self.arr), rows):
+      self.arr.append(arr2)
+    for x in range(length):
+      self.arr[x].extend(arr3)
+    for x in range(len(self.arr)):
+      print(self.arr[x])
     
 #3-D Array Class
 class Array_3D:
@@ -59,6 +70,11 @@ class Array_4D:
 myArr2D = Array_2D(3,4)
 myArr2D.set(2,2,"Hello Mars!")
 print(myArr2D.get(2,2))
+print("Length column before expansion: " + str(len(myArr2D.arr)))
+print("Length row before expansion: " + str(len(myArr2D.arr[0])))
+myArr2D.expand(5,6)
+print("Length column after expansion: " + str(len(myArr2D.arr)))
+print("Length row after expansion: " + str(len(myArr2D.arr[2])))
 
 #Example Use of 3D Array
 myArr3D = Array_3D(3,4,5)
