@@ -69,16 +69,12 @@ class Array_4D:
 myArr2D = Array_2D(3,4)
 myArr2D.set(2,2,"Hello Mars!")
 print(myArr2D.get(2,2))
-print("Length column before expansion: " + str(len(myArr2D.arr)))
-print("Length row before expansion: " + str(len(myArr2D.arr[0])))
-myArr2D.expand(5,6)
-print("Length column after expansion: " + str(len(myArr2D.arr)))
-print("Length row after expansion: " + str(len(myArr2D.arr[2])))
 
 #Example Use of 3D Array
 myArr3D = Array_3D(3,4,5)
 myArr3D.set(2,2,2,"Hello Jupiter!")
 print(myArr3D.get(2,2,2))
+
 
 #Example Use of 4D Array
 myArr4D = Array_4D(3,4,5,6)
