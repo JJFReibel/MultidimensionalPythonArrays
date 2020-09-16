@@ -112,6 +112,15 @@ class Array_4D:
             arr2[i][j][k] = self.arr[i][j][k]
     self.arr.clear()
     self.arr = arr2
+  def reduce(self, x, y, z, t):
+    arr2 = [[[[None]*x for _ in range(y)] for _ in range(z)] for _ in range(t)]
+    for i in range(len(arr2)):
+      for j in range(len(arr2[0])):
+        for k in range(len(arr2[0][0])):
+          for t in range(len(arr2[0][0][0])):
+            arr2[i][j][k][t] = self.arr[i][j][k][t]
+    self.arr.clear()
+    self.arr = arr2
   
 #Example Use of 2D Array
 myArr2D = Array_2D(5,2)
@@ -157,14 +166,21 @@ myArr4D = Array_4D(5,2,3,4)
 myArr4D.set(0,0,0,1,"Hello Mars!")
 myArr4D.set(0,0,0,2,"Hello Mars!")
 myArr4D.set(0,0,0,3,"Hello Mars!")
-print("Length tyme before expansion: " + str(len(myArr4D.arr)))
-print("Length third before expansion: " + str(len(myArr4D.arr[0])))
-print("Length row before expansion: " + str(len(myArr4D.arr[0][0])))
-print("Length column before expansion: " + str(len(myArr4D.arr[0][0][0])))
+print("Length 4D tyme before expansion: " + str(len(myArr4D.arr)))
+print("Length 4D third before expansion: " + str(len(myArr4D.arr[0])))
+print("Length 4D row before expansion: " + str(len(myArr4D.arr[0][0])))
+print("Length 4D column before expansion: " + str(len(myArr4D.arr[0][0][0])))
 print()
 myArr4D.expand(7,3,4,5)
-print("Length tyme after expansion: " + str(len(myArr4D.arr)))
-print("Length third after expansion: " + str(len(myArr4D.arr[0])))
-print("Length row after expansion: " + str(len(myArr4D.arr[0][0])))
-print("Length column after expansion: " + str(len(myArr4D.arr[0][0][0])))
+print("Length 4D tyme after expansion: " + str(len(myArr4D.arr)))
+print("Length 4D third after expansion: " + str(len(myArr4D.arr[0])))
+print("Length 4D row after expansion: " + str(len(myArr4D.arr[0][0])))
+print("Length 4D column after expansion: " + str(len(myArr4D.arr[0][0][0])))
+myArr4D.output()
+myArr4D.reduce(1,2,3,2)
+print("Length 4D tyme after reduction: " + str(len(myArr4D.arr)))
+print("Length 4D third after reduction: " + str(len(myArr4D.arr[0])))
+print("Length 4D row after expansion: " + str(len(myArr4D.arr[0][0])))
+print("Length 4D column after expansion: " + str(len(myArr4D.arr[0][0][0])))
+
 myArr4D.output()
