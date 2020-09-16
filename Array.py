@@ -34,16 +34,6 @@ class Array_2D:
     self.arr[x][y] = value
   def get(self, x, y):
     return self.arr[x][y]
-  def expand(self, x, y):
-    rows, cols = (x, y)
-    arr2 = [0 for i in range(cols)]
-    arr3 = [0 for i in range(cols-len(self.arr)-1)]
-    for x in range(len(self.arr), rows):
-      self.arr.append(arr2)
-    for x in range(rows-1):
-      self.arr[x].extend(arr3)
-    for x in range(len(self.arr)):
-      print(self.arr[x])
     
 #3-D Array Class
 class Array_3D:
