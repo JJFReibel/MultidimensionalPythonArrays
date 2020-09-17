@@ -6,6 +6,6 @@ These classes are convenient for matrices as well as for graphing coordinates. T
 Functions, besides the constructors, include get, set, expand, and reduce, as well as ouput.
 For get, specify coordinates, and the value will be returned.
 For set, specify the coordinates, and then the value.
-For expand, specify new dimensions that are greater than before.
-For reduce, specify dimensions that are less than before.
+For expand, specify new dimensions that are greater or equal to previous array.
+For reduce, specify dimensions that are less or equal to previous array.
 Future versions of this library may include a reset function, that can reset the dimensions with some being larger while others are smaller. As it stands, for safety, expand is designed for all coordinate elements to increase or stay the same, while reduce is designed for all coordinates to decrease or stay the same. Use each individually in the order necessary, and make clones to manipulate data.
