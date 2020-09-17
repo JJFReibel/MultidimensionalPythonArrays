@@ -24,7 +24,6 @@
 #2D and 3D arrays implemented with functions
 #Example use of 2D and 3D arrays (good for 2D and 3D space, or 2D positions at certain times)
 #Eample use of 4D array (good for 3D positions at certain times)
-#EDIT: Code still has a number of bugs that are being worked on
 
 #2-D Array Class
 class Array_2D:
