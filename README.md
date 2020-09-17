@@ -1,7 +1,7 @@
 # MultidimensionalPythonArrays
 Multidimensional arrays in Python made easy. 
 Implementation includes 2D, 3D, and 4D arrays in Python. 
-Classes are Array_2d, Array_3D, and Array_4D. 
+Classes are Array_2D, Array_3D, and Array_4D. 
 These classes are convenient for matrices as well as for graphing coordinates. The 2D and 3D arrays are good for space coordinates, while the 3D arrays can also be used for 2D space coordinates and a time, such as for position per given time, for graphs, gifs, and more. The 4D array is especially useful for 3D space coordinates and a value of time, to keep track of a moving 3D body's position at different time intervals.
 Functions, besides the constructors, include get, set, expand, and reduce.
 For get, specify coordinates, and the value will be returned.
